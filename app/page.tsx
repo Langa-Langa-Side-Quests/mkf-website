@@ -2,23 +2,23 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpen, GraduationCap, Users, ShieldAlert } from "lucide-react";
+import { BookOpen, GraduationCap, Users, ShieldAlert, Heart } from "lucide-react";
 
 export default function Home() {
-  // Ultra-premium layout mapping for exactly 7 images
+  // Balanced 7-image gallery
   const galleryImages = [
-    { src: "/gallery/img1.jpg", alt: "Mama kevina", className: "md:col-span-2 md:row-span-2", isPriority: true }, // Main feature
-    { src: "/gallery/img2.jpg", alt: "Meeting with some of Donors Supporting Scholarships" },
-    { src: "/gallery/img3.jpg", alt: "Mama kevina Comperhensive Secondary School" },
+    { src: "/gallery/img1.jpg", alt: "Mama Kevina Memorial Gallery", className: "md:col-span-2 md:row-span-2", isPriority: true },
+    { src: "/gallery/img2.jpg", alt: "Meeting with Donors Supporting Scholarships" },
+    { src: "/gallery/img3.jpg", alt: "Mama Kevina Comprehensive Secondary School" },
     { src: "/gallery/img4.jpg", alt: "School Engagement and Activities" },
-    { src: "/gallery/img7.jpg", alt: "Sister Clare Mary Busingye wih Some of the children under Scholarship" },
-    { src: "/gallery/img6.jpg", alt: "School Gardening Project", className: "md:row-span-2" }, // Elegant tall block
-    { src: "/gallery/img5.jpg", alt: "Vegetable Income Generating Project", className: "md:col-span-2" }, // Wide anchor block
+    { src: "/gallery/img7.jpg", alt: "Sister Clare Mary Busingye with Scholarship Children" },
+    { src: "/gallery/img6.jpg", alt: "School Gardening Project", className: "md:row-span-2" },
+    { src: "/gallery/img5.jpg", alt: "Vegetable Income Generating Project", className: "md:col-span-2" },
   ];
 
   return (
     <main className="w-full">
-      {/* Hero Block */}
+      {/* SECTION:Hero Block */}
       <section className="bg-gradient-to-b from-blue-50 via-white to-transparent py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center space-y-6">
           <span className="text-emerald-600 font-bold tracking-widest text-xs uppercase px-3 py-1 bg-emerald-50 rounded-full border border-emerald-200">
@@ -41,7 +41,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Summary Banner */}
+      {/* SECTION:Quick Summary Banner */}
       <section className="bg-blue-900 text-white py-12">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-2xl font-bold mb-4">Our Core Approach</h2>
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Program Summary Overviews */}
+      {/* SECTION: Program Summary Overviews */}
       <section className="container mx-auto px-4 py-20 max-w-6xl">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl font-bold text-slate-900">What We Do</h2>
@@ -101,7 +101,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PREMIUM SECTION: Asymmetric Masonry Impact Gallery */}
+   
+     {/* SECTION: Leadership & Founder's Vision */}
+      <section className="bg-white border-t border-slate-100 py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Column 1: Editorial Text (5 cols) */}
+            <div className="lg:col-span-5 space-y-6">
+              <span className="flex items-center gap-2 text-blue-700 font-semibold text-sm tracking-wide">
+                <Heart className="h-4 w-4 fill-blue-100" /> Executive Leadership
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+                Led by Compassion, Guided by Faith
+              </h2>
+              <p className="text-slate-600 leading-relaxed">
+                Mama Kevina coordinates the Mama Kevina Foundation, carrying forward a legacy of hope and systemic empowerment. Under her leadership, the foundation focuses on practical interventions—such as child sponsorships, education support, and agricultural self-reliance.
+              </p>
+              <div className="border-l-4 border-emerald-500 pl-4 py-1 bg-slate-50 rounded-r-lg">
+                <p className="text-slate-500 italic text-sm">
+                  &ldquo;Our vision is a self-sustaining society where children, girls, and families have the tools to construct their own future with dignity.&rdquo;
+                </p>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 grid grid-cols-12 gap-4 h-[420px]">
+              {/* Tall Left Portrait */}
+              <div className="col-span-6 relative rounded-2xl overflow-hidden shadow-md border border-slate-100">
+                <Image 
+                  src="/gallery/mama_kevina1.jpeg" 
+                  alt="Mama Kevina standing"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 50vw, 35vw"
+                />
+              </div>
+              
+              <div className="col-span-6 grid grid-rows-2 gap-4">
+                <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-100">
+                  <Image 
+                    src="/gallery/mama_kevina2.jpeg" 
+                    alt="Mama Kevina working at her office desk"
+                    fill
+                    className="object-cover" 
+                    sizes="(max-width: 1024px) 50vw, 35vw"
+                  />
+                </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-md border border-slate-100">
+                  <Image 
+                    src="/gallery/mama_kevina3.jpeg" 
+                    alt="Mama Kevina coordinating daily records"
+                    fill
+                    className="object-cover" 
+                    sizes="(max-width: 1024px) 50vw, 35vw"
+                  />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+
+      {/* SCTION: Asymmetric Masonry Impac Gallery */}
       <section className="bg-slate-50/60 border-t border-slate-100 py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
@@ -109,7 +172,7 @@ export default function Home() {
             <p className="text-slate-500">Real glimpses into the daily field transformations happening across Tororo District.</p>
           </div>
 
-          {/* Grid optimized with custom rows to ensure perfect alignment for 7 items */}
+          {/* Grid updated with CSS classes to fix the mobile-vs-desktop caption behavior */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[220px]">
             {galleryImages.map((img, idx) => (
               <div 
@@ -122,14 +185,12 @@ export default function Home() {
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
-                  // Clean fix for the terminal warning:
                   priority={img.isPriority || false}
                   loading={img.isPriority ? undefined : "lazy"}
                 />
                 
-                {/* Modern visual overlay containing descriptions that pull up smoothly */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-5">
-                  <p className="text-white text-xs sm:text-sm font-medium tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-transparent md:opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4 md:p-5">
+                  <p className="text-white text-xs sm:text-sm font-medium tracking-wide translate-y-0 md:translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     {img.alt}
                   </p>
                 </div>

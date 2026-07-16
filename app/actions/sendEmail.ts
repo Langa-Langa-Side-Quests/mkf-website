@@ -2,7 +2,6 @@
 
 import { Resend } from "resend";
 
-// Initialize Resend with your hidden environment variable API key
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendEmail(formData: FormData) {
@@ -18,10 +17,10 @@ export async function sendEmail(formData: FormData) {
 
   try {
     await resend.emails.send({
-      from: "Mama Kevina Website <onboarding@resend.dev>", // Resend provides this domain for testing
-      to: "khatimlaku@gmail.com", // 🌟 Change this to your actual foundation email address!
+      from: "Mama Kevina Website <onboarding@resend.dev>", 
+      to: "info@mamakevinafoundation.org", 
       subject: `New Contact Form: ${subject || "General Inquiry"}`,
-      replyTo: email, // Clicking reply in your email client will reply straight to the website visitor
+      replyTo: email, 
       html: `
         <h2>New Message from Mama Kevina Foundation Website</h2>
         <p><strong>Name:</strong> ${name}</p>

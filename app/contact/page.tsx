@@ -27,7 +27,7 @@ export default function ContactPage() {
         success: true, 
         message: "Thank you! Your inquiry has been sent successfully." 
       });
-      (event.target as HTMLFormElement).reset(); // Clears all input fields on success
+      (event.target as HTMLFormElement).reset(); 
     } else {
       setStatus({ 
         success: false, 

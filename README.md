@@ -56,7 +56,7 @@ This project is configured with `output: "standalone"` in `next.config.ts` for o
    - Create a new application
    - Application root: path to your cloned project
    - Application URL: `mamakevinafoundation.com`
-   - Application startup file: `node_modules/.bin/next`
+   - Application startup file: `.next/standalone/server.js`
    - Node.js version: v20.9+ (latest LTS)
 
 4. **Set Environment Variables** in the Node.js app config:

@@ -1,0 +1,89 @@
+================================================================================
+                    cPanel Node.js App Quick Setup Reference
+================================================================================
+
+SERVER CONNECTION
+─────────────────────────────────────────────────────────────────────────────
+cPanel URL: https://198.54.119.162:2083
+Username: mamabzbt
+Password: F55573%hUtQ37&bp
+
+PROJECT LOCATION
+─────────────────────────────────────────────────────────────────────────────
+Path on Server: /home/mamabzbt/repositories/mkf-website
+Public Domain: mamakevinafoundation.com
+
+CPANEL APP CONFIGURATION
+─────────────────────────────────────────────────────────────────────────────
+Feature: Software → Setup Node.js App
+
+Required Fields:
+┌─────────────────────────────────────────────────────────────────────────┐
+│ Application root:                                                       │
+│ /home/mamabzbt/repositories/mkf-website                                 │
+├─────────────────────────────────────────────────────────────────────────┤
+│ Application URL:                                                        │
+│ mamakevinafoundation.com                                                │
+├─────────────────────────────────────────────────────────────────────────┤
+│ Application startup file:                                               │
+│ .next/standalone/server.js                                                  │
+├─────────────────────────────────────────────────────────────────────────┤
+│ Node.js version:                                                        │
+│ v20.9+ (latest LTS)                                                     │
+├─────────────────────────────────────────────────────────────────────────┤
+│ Application mode:                                                       │
+│ production                                                              │
+└─────────────────────────────────────────────────────────────────────────┘
+
+ENVIRONMENT VARIABLES (In cPanel Setup Node.js App)
+─────────────────────────────────────────────────────────────────────────────
+Name: RESEND_API_KEY
+Value: re_xxxxxxxxxxxx  (Get from https://resend.com/api-keys)
+
+Name: NODE_ENV
+Value: production
+
+SSH COMMANDS (For Terminal/Build)
+─────────────────────────────────────────────────────────────────────────────
+# Install dependencies
+npm install
+
+# Build the application
+npm run build
+
+# Start the application (via cPanel UI)
+(Click Restart in cPanel Setup Node.js App)
+
+================================================================================
+                            DEPLOYMENT CHECKLIST
+================================================================================
+
+Setup Phase (via cPanel Web Interface):
+  [ ] Log into cPanel at https://198.54.119.162:2083
+  [ ] Go to Software → Setup Node.js App
+  [ ] Create Application with settings above
+  [ ] Verify Node.js version is v20.9+
+
+Build Phase (via SSH or cPanel Terminal):
+  [ ] SSH to server or use cPanel Terminal
+  [ ] cd ~/repositories/mkf-website
+  [ ] npm install (install dependencies)
+  [ ] npm run build (build the application)
+
+Configuration Phase (via cPanel):
+  [ ] Add RESEND_API_KEY to environment variables
+  [ ] Verify NODE_ENV is set to production
+  [ ] Save configuration
+
+Launch Phase (via cPanel):
+  [ ] Click "Restart" in Setup Node.js App
+  [ ] Verify status shows "Running"
+  [ ] Visit https://mamakevinafoundation.com
+
+Verification:
+  [ ] Homepage loads successfully
+  [ ] Contact form is visible
+  [ ] Gallery displays images
+  [ ] Test contact form (sends via Resend)
+
+================================================================================

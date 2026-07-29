@@ -139,3 +139,17 @@
     @apply font-sans;
   }
 }
+
+/* Hero slideshow: slow zoom (Ken Burns) effect for background photos */
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.12) translate(-1.5%, -1.5%);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 8s ease-out forwards;
+}

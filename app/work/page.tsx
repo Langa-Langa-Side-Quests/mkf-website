@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
@@ -11,6 +12,12 @@ import {
   Utensils, 
   HeartPulse 
 } from "lucide-react";
+
+const karamojaImages = [
+  { src: "/gallery/karamoja-child.jpeg", alt: "School feeding programme supporting a child in Karamoja" },
+  { src: "/gallery/karamoja-guy.jpeg", alt: "School feeding programme beneficiary in Karamoja" },
+  { src: "/gallery/karamoja-children.jpeg", alt: "Children benefiting from the school feeding programme in Karamoja" },
+];
 
 export default function WorkPage() {
   return (
@@ -68,6 +75,30 @@ export default function WorkPage() {
                   <p className="text-sm">
                     Sponsors develop personal relationships with the children they support. We provide regular updates, letters, and virtual interactions allowing sponsors to witness the tangible impact of their structural contributions.
                   </p>
+                </div>
+              </div>
+
+              {/* School Feeding in Karamoja — photo evidence strip */}
+              <div className="space-y-3 pt-2">
+                <h4 className="font-bold text-slate-900 text-base">School Feeding in Karamoja</h4>
+                <p className="text-sm text-slate-500">
+                  Our education programme supports school feeding initiatives in Karamoja, ensuring children are nourished and ready to learn.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {karamojaImages.map((img) => (
+                    <div key={img.src} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-slate-100 shadow-sm group">
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                        <p className="text-white text-xs font-medium">{img.alt}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </CardContent>

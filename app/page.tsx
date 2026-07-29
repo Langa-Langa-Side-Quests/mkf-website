@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpen, GraduationCap, Users, ShieldAlert, Heart } from "lucide-react";
+import { BookOpen, GraduationCap, Users, ShieldAlert, Heart, ArrowRight } from "lucide-react";
+import HeroSlideshow from "@/components/HeroSlideshow";
 
 export default function Home() {
   // Balanced 7-image gallery
@@ -18,28 +19,8 @@ export default function Home() {
 
   return (
     <main className="w-full">
-      {/* SECTION:Hero Block */}
-      <section className="bg-gradient-to-b from-blue-50 via-white to-transparent py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center space-y-6">
-          <span className="text-emerald-600 font-bold tracking-widest text-xs uppercase px-3 py-1 bg-emerald-50 rounded-full border border-emerald-200">
-            Ugandan Indigenous NGO
-          </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-            Empowering Society to Break the <span className="text-blue-700">Cycle of Poverty</span>
-          </h1>
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
-            Mama Kevina Foundation actively works to improve the lives of vulnerable communities particularly girls, young women, and youth by advancing education and vocational skills in Tororo District.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <Button asChild size="lg" className="bg-blue-700 hover:bg-blue-800 text-white shadow-md">
-              <Link href="/work">Our Core Programs</Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild className="border-slate-300 text-slate-700 hover:bg-slate-50">
-              <Link href="/about">Read Our Story</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* SECTION: Animated Hero Slideshow */}
+      <HeroSlideshow />
 
       {/* SECTION:Quick Summary Banner */}
       <section className="bg-blue-900 text-white py-12">
@@ -123,6 +104,13 @@ export default function Home() {
                   &ldquo;Our vision is a self-sustaining society where children, girls, and families have the tools to construct their own future with dignity.&rdquo;
                 </p>
               </div>
+              <div className="pt-2">
+                <Button asChild variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50">
+                  <Link href="/team" className="flex items-center gap-2">
+                    Meet the Full Team <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
 
             <div className="lg:col-span-7 grid grid-cols-12 gap-4 h-[420px]">
@@ -189,8 +177,8 @@ export default function Home() {
                   loading={img.isPriority ? undefined : "lazy"}
                 />
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-transparent md:opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4 md:p-5">
-                  <p className="text-white text-xs sm:text-sm font-medium tracking-wide translate-y-0 md:translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4 md:p-5">
+                  <p className="text-white text-xs sm:text-sm font-medium tracking-wide translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     {img.alt}
                   </p>
                 </div>

@@ -15,6 +15,7 @@ export default function Navbar() {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Our Work", href: "/work" },
+    { label: "Our Team", href: "/team" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -54,7 +55,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="transition-colors hover:text-blue-700 relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-blue-700 after:transition-all hover:after:w-full"
+              className="transition-colors hover:text-green-500 relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-green-500 after:transition-all hover:after:w-full"
             >
               {link.label}
             </Link>
